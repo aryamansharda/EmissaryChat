@@ -39,7 +39,7 @@ module.exports = new Script({
         receive: (bot, message) => {
             return bot.getProp('name')
                 .then((name) => bot.say(`Hello again, ${name}!`))
-                .then(() => 'finish');
+                .then(() => 'howToHelp');
         }
     }
 });
