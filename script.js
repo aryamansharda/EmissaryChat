@@ -34,7 +34,6 @@ module.exports = new Script({
                     return bot.setProp('task', task)
                         .then(() => bot.say(`Great! I'll help you create an appointment.`))
                         .then(() => bot.say(`What time/day would you like to create an appointment for? (MM/DD/YYYY 24:00)`))
-                        .then(() => console.log("New appointment created.")
                         .then(() => 'finish');
                     break;
                 case "CA":
