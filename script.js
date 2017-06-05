@@ -33,16 +33,20 @@ module.exports = new Script({
                 case "NA":
                     return bot.setProp('task', task)
                         .then(() => bot.say(`Great! I'll help you create an appointment.`))
+                        .then(() => bot.say(`What time/day would you like to create an appointment for? (MM/DD/YYYY 24:00)`))
+                        .then(() => console.log("New appointment created.")
                         .then(() => 'finish');
                     break;
                 case "CA":
                     return bot.setProp('task', task)
                                     .then(() => bot.say(`Great! I'll help you cancel an appointment`))
+                                    .then(() => bot.say(`Which of the following appointments do you want to cancel?'))
                                     .then(() => 'finish');
                     break;
                 case "RA":
                     return bot.setProp('task', task)
                                     .then(() => bot.say(`Great! I'll help you reschedule an appointment`))
+                                    .then(() => bot.say(`Which of the following appointments do you want to reschedule?'))
                                     .then(() => 'finish');
                     break;
                 case "LC":
