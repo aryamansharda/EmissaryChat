@@ -26,12 +26,35 @@ module.exports = new Script({
     },
 
     howToHelp: {
-        prompt: (bot) => bot.say('How can I help you today? \n 1) New Appointment (NA) \n 2) Cancel Appointment (CA) \n 3) Reschedule Appointment (RA) \n 4) Live Chat (LC)'),
+        prompt: (bot) => bot.say("How can I help you today? \n 1) New Appointment (NA) \n 2) Cancel Appointment (CA) \n 3) Reschedule Appointment (RA) \n 4) Live Chat (LC)"),
         receive: (bot, message) => {
             const task = message.text;
-            return bot.setProp('task', name)
-                .then(() => bot.say(`Great! I'll help you with ${task}`))
-                .then(() => 'finish');
+            switch(task) {        
+                case "NA":
+                    return bot.setProp('task', task)
+                        .then(() => bot.say(`Great! I'll help you create an appointment.`))
+                        .then(() => 'finish');
+                    break;
+                case "CA":
+                    return bot.setProp('task', task)
+                                    .then(() => bot.say(`Great! I'll help you cancel an appointment`))
+                                    .then(() => 'finish');
+                    break;
+                case "RA":
+                    return bot.setProp('task', task)
+                                    .then(() => bot.say(`Great! I'll help you reschedule an appointment`))
+                                    .then(() => 'finish');
+                    break;
+                case "LC":
+                    return bot.setProp('task', task)
+                                    .then(() => bot.say(`Great! I'll go fetch a Emissary representative`))
+                                    .then(() => 'finish');
+                    break;
+                default:
+                    return bot.setProp('task', task)
+                                    .then(() => bot.say(`An error occurred`))
+                                    .then(() => 'finish');
+                }            
         }
     },
 
