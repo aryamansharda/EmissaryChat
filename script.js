@@ -38,7 +38,7 @@ module.exports = new Script({
                 case "CA":
                 case "1": 
                 case "new appointment":
-                case "New Appointment"
+                case "New Appointment":
                     return bot.setProp('task', task)
                                     .then(() => bot.say(`Great! I'll help you cancel an appointment`))
                                     .then(() => bot.say(`What time/day would you like to create an appointment for? (MM/DD/YYYY 24:00)`))
@@ -47,8 +47,8 @@ module.exports = new Script({
                     break;
                 case "RA":
                 case "2": 
-                case "cancel appointment"
-                case "Cancel Appointment"
+                case "cancel appointment":
+                case "Cancel Appointment":
                     return bot.setProp('task', task)
                                     .then(() => bot.say(`Great! I'll help you reschedule an appointment`))
                                     .then(() => bot.say(`Which of the following appointments do you want to cancel?'))
@@ -56,10 +56,10 @@ module.exports = new Script({
                     break;
                 case "LC":
                 case "3": 
-                case "Live Chat"
-                case "Representative"
-                case "representative"
-                case "chat"
+                case "Live Chat":
+                case "Representative":
+                case "representative":
+                case "chat":
                     return bot.setProp('task', task)
                                     .then(() => bot.say(`Great! I'll go fetch a Emissary representative`))
                                     .then(() => bot.say(`Which of the following appointments do you want to reschedule?'))
